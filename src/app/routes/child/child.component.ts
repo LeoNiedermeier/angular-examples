@@ -9,21 +9,31 @@ import { Route } from '@angular/router';
   </nav>
   <router-outlet></router-outlet>`
 })
-export class Child1Component {
+export class ChildExampleComponent {
   constructor() {}
 }
 
 @Component({
-  template: `
-  <p>Child 1 1</p>`
+  template: `<p>Child 1 1</p>`
 })
 export class Child11Component {
   constructor() {}
 }
 
-export const child1Routes: Route[] = [
+@Component({
+  template: `<p>Child 1 2</p>`
+})
+export class Child12Component {
+  constructor() {}
+}
+
+export const childExampleChildrenRoutes: Route[] = [
   {
     path: 'child-1-1',
     component: Child11Component
+  },
+  {
+    path: 'child-1-2',
+    component: Child12Component
   }
 ];

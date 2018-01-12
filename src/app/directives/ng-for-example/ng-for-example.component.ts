@@ -11,6 +11,7 @@ export class NgForExampleComponent implements OnInit {
   ngOnInit() {
     this.rows = [];
     for (let i = 10; i < 20; i++) {
+      // Back-Ticks für Template String
       this.rows.push(new Row(i * 2, `value ${i}`));
     }
   }
@@ -20,6 +21,6 @@ export class NgForExampleComponent implements OnInit {
   }
 }
 
-export class Row {
+class Row {
   constructor(public readonly id: number, public readonly value: string) {}
 }

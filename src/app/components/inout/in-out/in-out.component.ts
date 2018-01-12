@@ -12,6 +12,7 @@ export class InOutComponent implements OnInit {
   myInputText = 'default';
 
   // can output any type
+  // can also be void
   @Output()
   myOutput = new EventEmitter<boolean>();
   constructor() {}

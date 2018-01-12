@@ -3,7 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { RouterModule, Routes } from '@angular/router';
 import { RoutesDashboardComponent } from './routes-dashboard/routes-dashboard.component';
-import { Child1Component, Child11Component, child1Routes } from './child/child.component';
+import { ChildExampleComponent, Child11Component, childExampleChildrenRoutes, Child12Component } from './child/child.component';
+import { RouteParametersParentComponent } from './route-parameters-parent/route-parameters-parent.component';
+import { RouteParametersChildComponent } from './route-parameters-child/route-parameters-child.component';
 
 const routerRoutes: Routes = [
   {
@@ -11,18 +13,34 @@ const routerRoutes: Routes = [
     component: RoutesDashboardComponent,
     children: [
       {
-        path: 'child-1',
-        component: Child1Component,
-        children: child1Routes
+        path: 'child-example',
+        component: ChildExampleComponent,
+        children: childExampleChildrenRoutes
+      },
+      {
+        path: 'route-parameters',
+        component: RouteParametersParentComponent,
+        children: [
+          {
+            path: 'parameter/:id',
+            component: RouteParametersChildComponent
+          }
+        ]
       }
     ]
   }
 ];
 
-
 @NgModule({
-  imports: [RouterModule.forChild(routerRoutes)],
+  imports: [RouterModule.forChild(routerRoutes), CommonModule],
   exports: [RouterModule],
-  declarations: [RoutesDashboardComponent, Child1Component, Child11Component]
+  declarations: [
+    RoutesDashboardComponent,
+    ChildExampleComponent,
+    Child11Component,
+    Child12Component,
+    RouteParametersParentComponent,
+    RouteParametersChildComponent
+  ]
 })
 export class RoutesModule {}
