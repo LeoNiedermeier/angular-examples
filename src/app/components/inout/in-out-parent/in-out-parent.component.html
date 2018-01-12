@@ -1,0 +1,10 @@
+
+<p>
+  <!--  with [] the input is bounded to the property of the class -->
+  <!-- $event is the payload of the child triggered event -->
+  <app-in-out [myInputText]='textForInput' (myOutput)="childButtonClicked($event)"></app-in-out>
+</p>
+
+<p>
+  <a href="https://angular.io/guide/component-interaction" target="blank">Angular Documentation: Component
+    Interaction</a>

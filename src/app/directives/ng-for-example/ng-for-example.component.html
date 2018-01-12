@@ -1,0 +1,4 @@
+<ul>
+  <!-- is a simple list, the li elements are repeated -->
+  <li *ngFor="let row of rows; odd as isOdd; index as i ; trackBy: trackById"> {{ i }} - {{row.value}} - isOdd: {{isOdd}}</li>
+</ul>

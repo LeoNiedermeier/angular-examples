@@ -1,0 +1,18 @@
+<p>
+  <button (click)="doSwitch()">Toggle</button>
+</p>
+<p> Current value: {{currentValue.value}}</p>
+
+<!-- man kann auf alles mögliche einen ngSwitch durchfühern. Am einfachsten ist es wahrscheinlich auf Zahlen und Strings -->
+<div [ngSwitch]="currentValue.value">
+  <!-- switchcase vergleicht auf string, daher '' in "" -->
+  <div *ngSwitchCase="'First'">
+    First case
+  </div>
+  <!-- Switchcase vergleicht auf Ausdruck, in diesem Fall auf eine Klasse mit statischen Properties -->
+  <div *ngSwitchCase="cases.SECOND"> Secound case</div>
+
+  <!-- Default falls kein ngSwitchCase zutrifft -->
+  <div *ngSwitchDefault> Default case</div>
+
+</div>
