@@ -22,6 +22,7 @@ export class RouteParametersChildComponent implements OnInit {
     this.idFromSnapshot = this.route.snapshot.paramMap.get('id');
 
     // via Observable findet auch eine Aktualisierung statt, falls nur andere Parameter Werte kommen.
+    // see https://angular.io/guide/router#observable-parammap-and-component-reuse
     this.idFromObservable = this.route.paramMap.switchMap((params: ParamMap) => {
       const id = params.get('id');
       return Observable.interval(1000).map(x => `Parameter ${id} Counter ${x}`);

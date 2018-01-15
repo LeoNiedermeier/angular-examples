@@ -21,7 +21,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, RouterModule.forRoot(appRoutes, {enableTracing: true}), ComponentsModule, DirectivesModule, RoutesModule],
+  imports: [BrowserModule, RouterModule.forRoot(appRoutes, {enableTracing: false}), ComponentsModule, DirectivesModule, RoutesModule],
   providers: [],
   bootstrap: [AppComponent]
 })
