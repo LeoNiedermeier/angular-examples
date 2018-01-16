@@ -1,0 +1,36 @@
+<p>
+  Person Form
+</p>
+
+<form [formGroup]="personForm" (ngSubmit)="register()">
+  <div>
+    <label>Vorname</label>
+    <input formControlName="vorname" type="text">
+
+  </div>
+  <div>
+
+    <label>Nachname</label>
+    <input formControlName="nachname" type="text">
+  </div>
+
+  <fieldset formGroupName="adresse">
+    <div>
+      <label>Strasse / Hausnummer</label>
+      <input formControlName="strasse" type="text">
+      <input formControlName="hausnummer" type="text">
+    </div>
+
+    <div>
+      <label>Postleitzahl / Ort</label>
+      <input formControlName="postleitzahl" type="text">
+      <input formControlName="ort" type="text">
+
+    </div>
+  </fieldset>
+
+  <button type="submit"  [disabled]="personForm.pristine || personForm.invalid">Registrieren</button>
+  <button   [disabled]="personForm.pristine" (click)="reset()">Zurücksetzen</button>
+</form>
+<p>Form value: {{ personForm.value | json }}</p>
+<p>Form status: {{ personForm.status | json }}</p>
