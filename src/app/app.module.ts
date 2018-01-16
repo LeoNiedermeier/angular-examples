@@ -8,8 +8,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { DirectivesDashboardComponent } from './directives/directives-dashboard/directives-dashboard.component';
 import { DirectivesModule } from './directives/directives.module';
 import { RoutesModule } from './routes/routes.module';
+import { ReactiveFormsExampleModule } from './forms/reactive-forms-example/reactive-forms-example.module';
+import { ReactiveFormsExampleComponent } from './forms/reactive-forms-example/reactive-forms-example.component';
 
 const appRoutes: Routes = [
+  {
+    path: 'forms/reactive',
+    component: ReactiveFormsExampleComponent
+  },
   {
     path: 'directives',
     component: DirectivesDashboardComponent
@@ -21,7 +27,14 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, RouterModule.forRoot(appRoutes, {enableTracing: false}), ComponentsModule, DirectivesModule, RoutesModule],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(appRoutes, { enableTracing: false }),
+    ComponentsModule,
+    DirectivesModule,
+    RoutesModule,
+    ReactiveFormsExampleModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

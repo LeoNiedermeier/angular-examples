@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
+
+class Row {
+  constructor(public readonly id: number, public readonly value: string) {}
+}
 @Component({
   selector: 'app-ng-for-example',
   templateUrl: './ng-for-example.component.html'
@@ -19,8 +23,4 @@ export class NgForExampleComponent implements OnInit {
   trackById(index: number, row: Row): number {
     return row.id;
   }
-}
-
-class Row {
-  constructor(public readonly id: number, public readonly value: string) {}
 }
