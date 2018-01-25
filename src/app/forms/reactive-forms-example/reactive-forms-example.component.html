@@ -2,7 +2,7 @@
   Person Form
 </p>
 
-<form [formGroup]="personForm" (ngSubmit)="register()">
+<form [formGroup]="personForm" (ngSubmit)='register()'>
   <div>
     <label>Vorname</label>
     <input formControlName="vorname" type="text">
@@ -23,14 +23,13 @@
 
     <div>
       <label>Postleitzahl / Ort</label>
-      <input formControlName="postleitzahl" type="text">
+      <input fromControlName="postleitzahl" type="text">
       <input formControlName="ort" type="text">
 
     </div>
   </fieldset>
 
-  <button type="submit"  [disabled]="personForm.pristine || personForm.invalid">Registrieren</button>
-  <button   [disabled]="personForm.pristine" (click)="reset()">Zurücksetzen</button>
+  <button type="submit">Registrieren</button>
 </form>
 <p>Form value: {{ personForm.value | json }}</p>
 <p>Form status: {{ personForm.status | json }}</p>
